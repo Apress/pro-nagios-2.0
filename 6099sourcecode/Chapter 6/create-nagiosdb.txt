@@ -1,0 +1,4 @@
+USE nagios_db;
+CREATE TABLE service_data (timet INT, host_name VARCHAR(75), service_description VARCHAR(75), service_state_id INT, service_state VARCHAR(8), service_output VARCHAR(255), service_perf_data VARCHAR(255), KEY (host_name), KEY (service_description));
+CREATE TABLE host_data (timet INT, host_name VARCHAR(75), host_alias VARCHAR(75), host_state_id INT, host_state VARCHAR(8), host_output VARCHAR(255), host_perf_data VARCHAR(255), KEY (host_name));
+

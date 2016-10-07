@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cmd_file=/usr/local/nagios/var/rw/nagios.cmd
+time=`date +%s`
+
+/bin/echo "[$time] START_EXECUTING_SVC_CHECKS" >> $cmd_file
+
+exit 0
+

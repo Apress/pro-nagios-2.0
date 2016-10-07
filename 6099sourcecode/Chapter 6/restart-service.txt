@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# $1 $SERVICEDESC$ Macro
+# $2 $SERVICESTATE$ Macro
+# $3 $SERVICESTATETYPE$ Macro
+
+case "$3" in
+                 HARD)  
+                          case "$2" in
+                          OK)
+                          # The service is okay - don't do anything.
+                          ;;
+                          WARNING)
+                          UNKNOWN)
+                          # The service is in WARNING - don't do anything.
+                          # Or the service is in an UNKNOWN state -  I am not sure what causes it and hence do nothing.
+                          ;;
+                          CRITICAL)
+                          # The service is critical try to restart it but only if it is in a HARD state.
+                          /etc/rc.d/init.d/"$1" restart
+                          ;;
+                          esac
+esac
+exit 0

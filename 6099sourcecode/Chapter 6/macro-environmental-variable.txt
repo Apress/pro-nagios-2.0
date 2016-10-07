@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ $NAGIOS_SERVICESTATETYPE = "HARD"]; 
+
+then
+     echo "The service state type is HARD" 
+else      
+     echo "The service state type is SOFT"
+
+fi
+
+exit 0
+
